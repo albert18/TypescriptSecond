@@ -1,3 +1,4 @@
+"use strict";
 var MyMath;
 (function (MyMath) {
     var PI = 3.14;
