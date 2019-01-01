@@ -1,3 +1,4 @@
-function calculateRectangle(width:number, length: number) {
+// adding default value
+export function calculateRectangle(width:number, length: number) {
     return width * length;
 }
