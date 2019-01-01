@@ -7,14 +7,28 @@
     <title>Module 6</title>
     <!-- <script src="./circleMath.js"></script>
     <script src="./rectangleMath.js"></script> -->
-    <script src="./app.js"></script>
+    <!-- <script src="./app.js"></script> -->
+
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <!-- <script src="appMath.js"></script> -->
     
     <!-- To bundle file, here's the command
     tsc --outFile section6.js rectangleMath.ts circleMath.ts section6.ts          -->
     
-    
 </head>
 <body>
     <h1>Module 6 Exercise</h1>
+
+    <script>
+        SystemJS.config({
+            baseURL: '/',
+            packages:{
+                '/':{
+            defaultJSExtension: 'js'
+                }
+            }
+        })
+        SystemJS.import('appMath.js');
+    </script>  
 </body>
 </html>
