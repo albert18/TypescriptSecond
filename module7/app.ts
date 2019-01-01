@@ -1,3 +1,6 @@
+// NOTE: Interface doesn't compiled at all 
+ 
+
 interface NamedPerson {
     firstName: string;
     age?: number; //? is optional
