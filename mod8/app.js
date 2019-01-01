@@ -28,4 +28,18 @@ function printAll(args) {
 // ---------------------------------------------------------
 // Generics Types
 var echo2 = echo;
-console.log(echo2("Something"));
+// console.log(echo2<string>("Something"));
+// ---------------------------------------------------------
+// Creating a Generic Class
+var SimpleMath = /** @class */ (function () {
+    function SimpleMath() {
+    }
+    SimpleMath.prototype.calculate = function () {
+        return +this.baseValue * +this.multiplyValue;
+    };
+    return SimpleMath;
+}());
+var simpleMath = new SimpleMath();
+simpleMath.baseValue = 2;
+simpleMath.multiplyValue = 40;
+console.log(simpleMath.calculate());

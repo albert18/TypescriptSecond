@@ -43,3 +43,16 @@ const echo2: <T>(data: T) => T = echo;
 
 // ---------------------------------------------------------
 // Creating a Generic Class
+
+class SimpleMath<T extends number | string> {
+    baseValue: any;
+    multiplyValue: any;
+    calculate(): number {
+        return +this.baseValue * +this.multiplyValue
+    }
+}
+
+const simpleMath = new SimpleMath<number>();
+simpleMath.baseValue = 2;
+simpleMath.multiplyValue = 40;
+console.log(simpleMath.calculate());
