@@ -26,3 +26,15 @@ const person:NamedPerson = {
 changeName(person);
 greet(person)
 person.greet("anything;")
+
+class Person implements NamedPerson {
+    firstName: any;
+    greet(lastName:string) {
+        console.log("Hi, I am " + this.firstName + " " + lastName);
+    }
+}
+
+const myPerson = new Person();
+myPerson.firstName = "Maxim"
+greet(myPerson);
+myPerson.greet("Anything Maxim")
