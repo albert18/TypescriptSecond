@@ -4,6 +4,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 // A decorator is just a function / appending by the @ sign
 // Note to remove the warning need to enable/add experimentalDecorators in tsconfig
 function logged(constructorFN) {
@@ -85,3 +88,29 @@ project.calcBudget = function () {
 };
 project.calcBudget();
 console.log(project);
+//////////////////// Paramater Decorators
+function printInfor(target, methodName, paraIndex) {
+    console.log("Target", target);
+    console.log("MethodName", methodName);
+    console.log("ParaIndex", paraIndex);
+}
+var Course = /** @class */ (function () {
+    function Course(name) {
+        this.name = name;
+    }
+    Course.prototype.printStudentName = function (mode, printAll) {
+        if (printAll) {
+            console.log(10000);
+        }
+        else {
+            console.log(2000);
+        }
+    };
+    __decorate([
+        __param(1, printInfor)
+    ], Course.prototype, "printStudentName", null);
+    return Course;
+}());
+var course = new Course("My Course");
+course.printStudentName("Anything", true);
+course.printStudentName("Anything1", false);

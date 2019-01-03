@@ -74,3 +74,30 @@ project.calcBudget = function() {
 };
 project.calcBudget();
 console.log(project);
+
+//////////////////// Paramater Decorators
+function printInfor(target: any, methodName: string, paraIndex: number) {
+    console.log("Target", target);
+    console.log("MethodName", methodName);
+    console.log("ParaIndex", paraIndex);
+}
+
+class Course {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    printStudentName(mode: string, @printInfor printAll:boolean) {
+        if(printAll) {
+            console.log(10000);
+        } else {
+            console.log(2000);
+        }
+    }
+}
+
+const course = new Course("My Course");
+course.printStudentName("Anything", true);
+course.printStudentName("Anything1", false);
