@@ -41,5 +41,5 @@ var SimpleMath = /** @class */ (function () {
 }());
 var simpleMath = new SimpleMath();
 simpleMath.baseValue = 2;
-simpleMath.multiplyValue = 40;
+simpleMath.multiplyValue = 90;
 console.log(simpleMath.calculate());

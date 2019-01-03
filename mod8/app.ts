@@ -54,5 +54,5 @@ class SimpleMath<T extends number | string> {
 
 const simpleMath = new SimpleMath<number>();
 simpleMath.baseValue = 2;
-simpleMath.multiplyValue = 40;
+simpleMath.multiplyValue = 90;
 console.log(simpleMath.calculate());
