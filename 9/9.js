@@ -26,7 +26,25 @@ var Car = /** @class */ (function () {
     function Car() {
     }
     Car = __decorate([
-        logging(true)
+        logging(true) // you can set to boolean/ it will print in console
     ], Car);
     return Car;
 }());
+// Advance Decorator
+function printable(constructorFN) {
+    constructorFN.prototype.print = function () {
+        console.log(this);
+    };
+}
+var Plant = /** @class */ (function () {
+    function Plant() {
+        this.name = "Green Plant";
+    }
+    Plant = __decorate([
+        logging(true),
+        printable
+    ], Plant);
+    return Plant;
+}());
+var plant = new Plant();
+plant.print();

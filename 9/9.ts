@@ -16,7 +16,23 @@ function logging(value: boolean) {
     return value ? logged : null;
 }
 
-@logging(true)
+@logging(true) // you can set to boolean/ it will print in console
 class Car {
 
 }
+
+// Advance Decorator
+function printable(constructorFN: Function) {
+    constructorFN.prototype.print = function() {
+        console.log(this);
+    }
+}
+
+@logging(true)
+@printable
+class Plant {
+    name = "Green Plant";
+}
+const plant = new Plant();
+(<any>plant).print();
+
