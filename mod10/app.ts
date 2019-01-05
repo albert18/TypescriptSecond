@@ -1,7 +1,7 @@
-declare var $:any;
+// declare var $:any;
 
 $(document).ready(function(){
     $('button').click(function(){
-        alert("test123123");
+        alert("dassa");
     });
 })
